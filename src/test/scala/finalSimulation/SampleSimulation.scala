@@ -70,7 +70,7 @@ class SampleSimulation extends Simulation {
     .maxDuration(60 seconds)
       .assertions(
         global.responseTime.max.lt(5000),
-        global.successfulRequests.percent.gt(95)
+        global.successfulRequests.percent.gt(80)
       )
 
 }
