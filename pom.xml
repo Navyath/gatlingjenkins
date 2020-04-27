@@ -59,6 +59,8 @@
         <version>${gatling-plugin.version}</version>
 		<configuration>
 		  <runMultipleSimulations>true</runMultipleSimulations>
+		  <!-- keep on executing multiple simulations even if one fails -->
+		  <continueOnAssertionFailure>true</continueOnAssertionFailure>
 		</configuration>
       </plugin>
     </plugins>
