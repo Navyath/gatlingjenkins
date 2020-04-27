@@ -17,7 +17,7 @@ class VideoGameFullTest extends Simulation {
 
   /*** Variables ***/
   // runtime variables
-  def userCount: Int = getProperty("USERS", "3").toInt
+  def userCount: Int = getProperty("USERS", "100").toInt
   def rampDuration: Int = getProperty("RAMP_DURATION", "10").toInt
   def testDuration: Int = getProperty("DURATION", "60").toInt
 
@@ -109,8 +109,8 @@ class VideoGameFullTest extends Simulation {
     .protocols(httpConf)
     .maxDuration(testDuration seconds)
       .assertions(
-        global.responseTime.max.lt(2000),
-        global.successfulRequests.percent.gt(95)
+        global.responseTime.max.lt(20),
+        global.successfulRequests.percent.gt(99)
       )
 
   /*** After ***/
