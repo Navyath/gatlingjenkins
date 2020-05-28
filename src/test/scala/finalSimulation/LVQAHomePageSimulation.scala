@@ -72,46 +72,44 @@ class LVQAHomePageSimulation extends Simulation {
             http("request_8")
 			.get("/athenadist/fonts/Muli-Regular.woff")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_9")
 			.get("/athenadist/fonts/Livvic-SemiBold.woff")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_10")
 			.get("/athenadist/fonts/Muli-SemiBold.woff")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_11")
 			.get("/athenadist/fonts/Livvic-Regular.woff")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_12")
 			.get("/athenadist/fonts/Muli-Regular.woff2")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_13")
 			.get("/athenadist/fonts/Muli-Light.woff")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_14")
 			.get("/athenadist/fonts/Livvic-SemiBold.woff2")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_15")
 			.get("/athenadist/fonts/Muli-SemiBold.woff2")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_16")
 			.get("/athenadist/fonts/Livvic-Regular.woff2")
 			.headers(headers_8)
-			.check(status.is(404)),
+			.check(status.is(200)),
             http("request_17")
 			.get("/athenadist/fonts/Muli-Light.woff2")
 			.headers(headers_8)
-			.check(status.is(404))))
+			.check(status.is(200))))
 
-	/*** setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol) ***/
-  
 	setUp(
 	scn.inject(
 		nothingFor(5 seconds),
@@ -120,7 +118,7 @@ class LVQAHomePageSimulation extends Simulation {
     .protocols(httpProtocol)
     .maxDuration(60 seconds)
 	.assertions(
-		global.responseTime.max.lt(5000),
-		global.successfulRequests.percent.gt(80)
+		global.responseTime.max.lt(3000),
+		global.successfulRequests.percent.gt(90)
 	)
 }
